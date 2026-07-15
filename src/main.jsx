@@ -1,0 +1,22 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import { ThemeModeProvider } from './theme/ThemeModeContext';
+import { ConversationsProvider } from './state/ConversationsContext';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ThemeModeProvider>
+      <ConversationsProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ConversationsProvider>
+    </ThemeModeProvider>
+  </React.StrictMode>
+);
